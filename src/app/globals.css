@@ -18,3 +18,29 @@ body {
 h1, h2, h3, h4, h5, h6 {
   @apply font-serif;
 }
+
+/* Hide Google Translate Default Widget Banner & Tooltips */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+iframe.skiptranslate,
+.goog-te-gadget-icon,
+.goog-te-gadget-simple {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Prevent Google Translate from adding margin to the top of body */
+body {
+  top: 0px !important;
+  position: static !important;
+}
+
+/* Reset Google text hover highlights */
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+}
+
