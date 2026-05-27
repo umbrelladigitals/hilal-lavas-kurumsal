@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  hilal-lavas:
+    build: .
+    image: hilal-lavas-kurumsal:latest
+    container_name: hilal-lavas-app
+    restart: always
+    ports:
+      - "3120:3120"
+    environment:
+      - PORT=3120
+      - NODE_ENV=production
+    volumes:
+      # Persists the SQLite database so database updates (uploaded images, dynamic fields) are not lost when containers are updated/recreated
+      - ./hilal.db:/app/hilal.db
+      - ./.env:/app/.env
