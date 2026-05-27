@@ -1,0 +1,6 @@
+{
+  "name": "Hilal Lavaş Kurumsal Site",
+  "description": "Hilal Lavaş kurumsal web sitesi ön yüz tasarımı.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

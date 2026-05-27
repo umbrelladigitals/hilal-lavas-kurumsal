@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  
+  --color-brand-green: #0d3822; /* Deeper forest green from logo */
+  --color-brand-light-green: #145233;
+  --color-brand-orange: #ea7a00; /* Richer orange from logo */
+  --color-brand-dark: #222222;
+  --color-brand-gray: #f8f9fa;
+}
+
+body {
+  @apply font-sans text-brand-dark antialiased bg-white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif;
+}
