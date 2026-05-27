@@ -2,7 +2,12 @@ import { cookies } from 'next/headers';
 import crypto from 'crypto';
 
 // Secret key for session encryption. In production, use SESSION_SECRET from environment.
-const SESSION_SECRET = process.env.SESSION_SECRET || 'hilal_lavas_super_secret_session_key_2026';
+// If missing in production, generate a secure random 32-byte key at runtime to prevent cookie forgery.
+const SESSION_SECRET = process.env.SESSION_SECRET || (
+  process.env.NODE_ENV === 'production'
+    ? crypto.randomBytes(32).toString('hex')
+    : 'hilal_lavas_super_secret_session_key_2026'
+);
 const COOKIE_NAME = 'hilal_admin_session';
 
 // Hashing function for passwords (SHA-256 is simple, fast, and native for this minimal db)
