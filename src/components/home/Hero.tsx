@@ -9,7 +9,7 @@ export default function Hero() {
   const { hero } = useAdminState();
 
   return (
-    <section className="relative w-full min-h-[850px] flex items-center overflow-hidden pt-16 pb-24 lg:pt-0 lg:pb-32">
+    <section className="relative w-full min-h-[480px] sm:min-h-[600px] lg:min-h-[850px] flex items-center overflow-hidden pt-8 pb-16 lg:pt-0 lg:pb-32">
       {/* Background Full Bleed Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -21,18 +21,18 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent"></div>
       </div>
 
-      <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-start pt-8 justify-center min-h-[650px]">
+      <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-start pt-4 justify-center min-h-[380px] sm:min-h-[500px] lg:min-h-[650px]">
         
         {/* Left-aligned Compact Content */}
-        <div className="w-full max-w-[560px] text-left mt-8">
+        <div className="w-full max-w-[560px] text-left mt-4 sm:mt-8">
           <div className="relative z-10">
-            <p className="text-brand-orange font-bold uppercase tracking-[0.25em] text-[13px] sm:text-[14px] mb-3 font-sans animate-pulse">
+            <p className="text-brand-orange font-bold uppercase tracking-[0.25em] text-[12px] sm:text-[14px] mb-2 sm:mb-3 font-sans animate-pulse">
               {hero.badge}
             </p>
-            <h1 className="text-[2.2rem] sm:text-4xl md:text-5xl lg:text-[3.5rem] font-sans font-extrabold text-[#11462b] leading-[1.1] mb-5 tracking-tight">
+            <h1 className="text-[1.8rem] sm:text-4xl md:text-5xl lg:text-[3.5rem] font-sans font-extrabold text-[#11462b] leading-[1.15] mb-3 sm:mb-5 tracking-tight">
               {hero.title}
             </h1>
-            <p className="text-gray-600 font-sans text-[15px] sm:text-[16px] mb-8 leading-relaxed font-semibold">
+            <p className="text-gray-600 font-sans text-[14px] sm:text-[16px] mb-5 sm:mb-8 leading-relaxed font-semibold">
               {hero.desc}
             </p>
 

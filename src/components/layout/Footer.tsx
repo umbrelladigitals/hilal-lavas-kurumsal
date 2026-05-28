@@ -9,7 +9,7 @@ export default function Footer() {
   const { contact } = useAdminState();
 
   return (
-    <footer className="bg-white border-t border-gray-100 pt-16 pb-8">
+    <footer className="bg-white border-t border-gray-100 pt-16 pb-24 md:pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
           
@@ -91,12 +91,12 @@ export default function Footer() {
         </div>
       </div>
       
-      {/* Sticky WhatsApp Order Button */}
+      {/* Sticky WhatsApp Order Button - Hidden on mobile (replaced by Floating FAB) */}
       <a 
         href={`https://wa.me/${contact.whatsapp.replace(/\D/g, '')}`}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-0 right-10 bg-[#25D366] text-white px-8 py-3 rounded-t-xl hover:bg-[#20b858] transition-colors flex items-center gap-2 z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.1)] group min-w-[200px] justify-center"
+        className="fixed bottom-0 right-10 bg-[#25D366] text-white px-8 py-3 rounded-t-xl hover:bg-[#20b858] transition-colors items-center gap-2 z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.1)] group min-w-[200px] justify-center hidden md:flex"
       >
         {/* Simple mock speech bubble path for whatsapp icon */}
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-white group-hover:scale-110 transition-transform">

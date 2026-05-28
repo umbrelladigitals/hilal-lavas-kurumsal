@@ -7,8 +7,9 @@ export default function QualitySection() {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row shadow-xl rounded-[4px] overflow-hidden bg-white mb-20 border border-gray-100">
           
-          {/* Left Side: Quality Policy (Dark Mode with heavy image overlay) */}
-          <div className="w-full lg:w-[45%] relative p-12 md:p-16 flex flex-col justify-center">
+          {/* Left Side: Quality Standards (Dark Mode) */}
+          <div className="w-full lg:w-[45%] relative p-6 sm:p-10 md:p-16 flex flex-col justify-center overflow-hidden">
+
             {/* Background Image with Overlay */}
             <div className="absolute inset-0 z-0 bg-gray-100">
               <img 
@@ -54,7 +55,7 @@ export default function QualitySection() {
           </div>
 
           {/* Right Side: Why Hilal Lavas? (Light Mode) */}
-          <div className="w-full lg:w-[55%] p-12 md:p-16 md:pl-20 bg-white relative flex flex-col justify-center">
+          <div className="w-full lg:w-[55%] p-6 sm:p-10 md:p-16 md:pl-20 bg-white relative flex flex-col justify-center">
              <div className="absolute -bottom-20 -right-20 w-[400px] h-[400px] opacity-20 pointer-events-none rounded-full overflow-hidden blur-[2px]">
               <img 
                 src="/images/texture_bg.png" 

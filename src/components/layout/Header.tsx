@@ -102,8 +102,8 @@ export default function Header() {
 
   return (
     <header className="w-full bg-white relative z-50">
-      {/* Top Bar */}
-      <div className="w-full border-b border-gray-100 py-2">
+      {/* Top Bar - Hidden on mobile for app-like layout */}
+      <div className="w-full border-b border-gray-100 py-2 hidden md:block">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm text-gray-500">
           <div className="flex items-center gap-4">
           </div>
@@ -124,10 +124,10 @@ export default function Header() {
       </div>
 
       {/* Main Nav */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        {/* Logo */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 md:py-4 flex items-center justify-between">
+        {/* Logo - Scaled down for mobile */}
         <Link href="/" className="flex items-center">
-          <img src="/hilallavas_logo.svg" alt="Hilal Lavaş" className="h-24 w-auto object-contain animate-fade-in" />
+          <img src="/hilallavas_logo.svg" alt="Hilal Lavaş" className="h-14 md:h-24 w-auto object-contain animate-fade-in" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -160,16 +160,16 @@ export default function Header() {
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3 sm:gap-5">
           {/* Custom Language Selector Dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="flex items-center gap-2 border border-gray-200 hover:border-[#11462b] rounded-full px-3 py-1.5 bg-white text-gray-700 hover:text-[#11462b] font-semibold text-[13px] transition-all cursor-pointer shadow-sm focus:outline-none"
+              className="flex items-center gap-1.5 border border-gray-200 hover:border-[#11462b] rounded-full px-2.5 py-1.5 bg-white text-gray-700 hover:text-[#11462b] font-semibold text-[12px] sm:text-[13px] transition-all cursor-pointer shadow-sm focus:outline-none"
             >
               {currentLangOption.flag}
               <span>{currentLangOption.shortLabel}</span>
-              <ChevronDown size={12} className={`text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown size={11} className={`text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
             </button>
 
             {isOpen && (
@@ -192,11 +192,11 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/iletisim" className="bg-[#11462b] text-white font-semibold text-[14px] px-6 py-2.5 rounded hover:bg-[#1e5c3c] transition-colors tracking-wide shadow-sm">
+          <Link href="/iletisim" className="bg-[#11462b] text-white font-semibold text-[13px] sm:text-[14px] px-4 sm:px-6 py-2.5 rounded hover:bg-[#1e5c3c] transition-colors tracking-wide shadow-sm hidden sm:block">
             TOPTAN SİPARİŞ
           </Link>
           <button className="text-gray-800 hover:text-brand-orange transition-colors">
-            <Search size={22} />
+            <Search size={20} className="sm:w-[22px] sm:h-[22px]" />
           </button>
         </div>
       </div>

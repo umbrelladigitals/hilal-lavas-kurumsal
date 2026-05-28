@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display } from 'next/font/google';
 import Script from 'next/script';
+import BottomNav from '@/src/components/layout/BottomNav';
 import './globals.css';
 
 const inter = Inter({
@@ -31,8 +32,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
-      <body className="font-sans text-brand-dark antialiased bg-white min-h-screen">
+      <body className="font-sans text-brand-dark antialiased bg-white min-h-screen pb-[66px] md:pb-0">
         {children}
+        <BottomNav />
+
         <div id="google_translate_element" style={{ display: 'none' }} className="hidden" />
         <Script
           src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"

@@ -18,7 +18,7 @@ export default function PromoBanners() {
               <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent/40"></div>
             </div>
 
-            <div className="relative z-10 p-12 max-w-[75%]">
+            <div className="relative z-10 p-6 sm:p-12 max-w-[90%] sm:max-w-[75%]">
               <p className="text-brand-orange font-bold uppercase tracking-widest text-[14px] mb-2">TOPTAN ALIM</p>
               <h2 className="text-[36px] font-serif font-bold text-gray-900 mb-4 leading-tight">Özel Fiyatlar</h2>
                <p className="text-gray-600 font-sans text-[15px] mb-8 leading-relaxed font-medium">
@@ -42,7 +42,7 @@ export default function PromoBanners() {
                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-transparent/40"></div>
             </div>
 
-            <div className="relative z-10 p-12 max-w-[75%]">
+            <div className="relative z-10 p-6 sm:p-12 max-w-[90%] sm:max-w-[75%]">
               <p className="text-brand-orange font-bold uppercase tracking-widest text-[14px] mb-2">LEZZETLİ TARİFLER</p>
               <h2 className="text-[36px] font-serif font-bold text-brand-green mb-4 leading-tight">İLHAM ALIN</h2>
               <p className="text-gray-600 font-sans text-[15px] mb-8 leading-relaxed font-medium">
