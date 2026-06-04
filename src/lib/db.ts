@@ -1,5 +1,6 @@
 import Database from 'better-sqlite3';
 import path from 'path';
+import crypto from 'crypto';
 
 let _db: any = null;
 
@@ -71,13 +72,23 @@ function initDb() {
     );
   `);
 
-  // Seed default data if empty
-  const adminCount = dbInstance.prepare('SELECT count(*) as count FROM admin').get() as { count: number };
-  if (adminCount.count === 0) {
-    // Default password: admin123 (hashed using SHA-256 for simple secure storage)
-    // SHA-256 hash of "admin123": '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9'
+  // Seed/Sync admin credentials from environment variables or use default
+  const envUsername = process.env.ADMIN_USERNAME || 'admin';
+  const envPassword = process.env.ADMIN_PASSWORD || 'admin123';
+  const envPasswordHash = crypto.createHash('sha256').update(envPassword).digest('hex');
+
+  const existingAdmin = dbInstance.prepare('SELECT * FROM admin WHERE username = ?').get(envUsername) as any;
+
+  if (!existingAdmin) {
+    // If the username is custom, clear other admin users to prevent unauthorized access using the default admin account
+    if (envUsername !== 'admin') {
+      dbInstance.prepare('DELETE FROM admin').run();
+    }
     dbInstance.prepare('INSERT OR IGNORE INTO admin (username, password_hash) VALUES (?, ?)')
-      .run('admin', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9');
+      .run(envUsername, envPasswordHash);
+  } else if (existingAdmin.password_hash !== envPasswordHash) {
+    dbInstance.prepare('UPDATE admin SET password_hash = ? WHERE username = ?')
+      .run(envPasswordHash, envUsername);
   }
 
   const heroCount = dbInstance.prepare('SELECT count(*) as count FROM hero').get() as { count: number };
